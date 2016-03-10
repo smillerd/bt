@@ -828,9 +828,9 @@ class WeighTarget(Algo):
     Sets target weights based on a target weight DataFrame.
 
     If the target weight dataFrame is  of same dimension
-    as the target.universe, the portfolio will effectively be rebalanced on each
-    period. For example, if we have daily data and the target DataFrame is of
-    the same shape, we will have daily rebalancing.
+    as the target.universe, the portfolio will effectively be rebalanced on
+    each period. For example, if we have daily data and the target DataFrame
+    is of the same shape, we will have daily rebalancing.
 
     However, if we provide a target weight dataframe that has only month end
     dates, then rebalancing only occurs monthly.
@@ -1107,7 +1107,7 @@ class LimitWeights(Algo):
         tw = target.temp['weights']
         if len(tw) == 0:
             return True
-        
+
         tw = bt.ffn.limit_weights(tw, self.limit)
         target.temp['weights'] = tw
 
